@@ -1,3 +1,8 @@
+/* ===== Конфиг дефицита: обновлять раз в неделю ===== */
+const AVAILABILITY = { left: 2, month: 'июнь', nextMonth: 'июле' };
+document.getElementById('badge-text').textContent =
+  `Осталось ${AVAILABILITY.left} ${AVAILABILITY.left === 1 ? 'место' : 'места'} на ${AVAILABILITY.month} — следующее окно в ${AVAILABILITY.nextMonth}`;
+
 /* ===== Анимации (GSAP + ScrollTrigger) ===== */
 if (window.gsap) {
   gsap.registerPlugin(ScrollTrigger);
@@ -79,11 +84,22 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const form = document.getElementById('lead-form');
 const statusEl = document.getElementById('form-status');
 
+const FIELD_LABELS = { name: 'имя', email: 'почту', message: 'описание задачи' };
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  if (!form.checkValidity()) {
-    statusEl.textContent = 'Заполните, пожалуйста, все поля.';
+  /* honeypot: боты заполняют скрытое поле — тихо игнорируем */
+  if (form._honey.value) return;
+
+  /* инлайн-валидация: подсветить и сфокусировать конкретное поле */
+  form.querySelectorAll('.invalid').forEach((el) => el.classList.remove('invalid'));
+  const firstInvalid = [...form.querySelectorAll('input[required], textarea[required]')]
+    .find((el) => !el.checkValidity());
+  if (firstInvalid) {
+    firstInvalid.classList.add('invalid');
+    firstInvalid.focus();
+    statusEl.textContent = `Заполните, пожалуйста, ${FIELD_LABELS[firstInvalid.name] || 'поле'}.`;
     statusEl.className = 'form-status err';
     return;
   }
@@ -101,15 +117,19 @@ form.addEventListener('submit', async (e) => {
         name: form.name.value.trim(),
         email: form.email.value.trim(),
         message: form.message.value.trim(),
+        page: location.href,
         _subject: 'Заявка с сайта AppFactory',
+        _template: 'table',
       }),
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    statusEl.textContent = 'Заявка отправлена! Ответим в течение рабочего дня.';
+    statusEl.textContent = 'Заявка у нас! В течение рабочего дня пришлём на почту цену и срок по вашей задаче.';
     statusEl.className = 'form-status ok';
     form.reset();
+    /* цель Метрики — раскомментировать после установки счётчика:
+       if (window.ym) ym(METRIKA_ID, 'reachGoal', 'lead'); */
   } catch (err) {
-    statusEl.textContent = 'Не получилось отправить. Напишите нам напрямую: yasnypon@gmail.com';
+    statusEl.textContent = 'Не получилось отправить — попробуйте ещё раз через минуту.';
     statusEl.className = 'form-status err';
   } finally {
     btn.disabled = false;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grinevoleg.github.io/appfactory-landing/sitemap.xml

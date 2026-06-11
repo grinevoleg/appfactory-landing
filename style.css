@@ -137,8 +137,11 @@ h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 0.45rem; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 .stats {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 14px; max-width: 640px; margin: 3.5rem auto 0;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 14px; max-width: 820px; margin: 3.5rem auto 0;
+}
+@media (min-width: 768px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
 }
 .stats div {
   padding: 18px 10px; border-radius: var(--radius);
@@ -196,6 +199,42 @@ h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 0.45rem; }
 .card-icon svg { width: 100%; height: 100%; }
 .card p { color: var(--muted); font-size: 0.95rem; }
 
+/* ====== Цены и кейсы ====== */
+.pricing, .cases, .faq { padding: 88px 0; }
+.pricing { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.price {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.25rem; margin-bottom: 0.7rem;
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.price span { font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; color: var(--muted); -webkit-text-fill-color: var(--muted); }
+.pricing-note, .cases-note { color: var(--muted); font-size: 0.95rem; max-width: 680px; margin-top: 1.6rem; }
+.section-cta { margin-top: 1.8rem; }
+.case-task { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; }
+.case-result { color: var(--text); font-size: 0.95rem; font-weight: 600; }
+
+/* ====== FAQ ====== */
+.faq-list { margin-top: 1.8rem; display: grid; gap: 12px; max-width: 820px; }
+.faq-list details {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: 0 22px;
+}
+.faq-list summary {
+  cursor: pointer; list-style: none;
+  padding: 18px 0; font-weight: 700; font-size: 1rem;
+  position: relative; padding-right: 36px;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem; font-weight: 400; color: var(--accent);
+  transition: transform 0.2s;
+}
+.faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-list details p { color: var(--muted); font-size: 0.97rem; padding: 0 0 20px; margin: 0; }
+
 /* ====== Подход ====== */
 .why-grid { display: grid; gap: 40px; grid-template-columns: 1fr; align-items: start; }
 .why-lead { color: var(--muted); }
@@ -249,12 +288,20 @@ h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 0.45rem; }
 .form-status.err { color: #f87171; }
 
 /* ====== Подвал ====== */
-.site-footer { border-top: 1px solid var(--border); padding: 26px 0; }
+.site-footer { border-top: 1px solid var(--border); padding: 30px 0; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; }
+.footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+.footer-nav a:hover { color: var(--text); }
 .footer-row {
   display: flex; flex-wrap: wrap; gap: 8px;
   justify-content: space-between;
   color: var(--muted); font-size: 0.88rem;
 }
+
+/* ====== Форма: служебное ====== */
+.hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+.form-note { margin-top: 12px; font-size: 0.82rem; color: var(--muted); }
+.field input.invalid, .field textarea.invalid { border-color: #f87171; }
 
 /* ====== Анимация появления (состояния задаёт GSAP в app.js) ====== */
 .reveal { will-change: transform, opacity; }
