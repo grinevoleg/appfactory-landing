@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AppFactory — сайт или веб-приложение под ключ: от описания до работающего адреса в интернете. Быстро, без лишних встреч и переплат.">
+  <title>AppFactory — сайт под ключ от идеи до работающего адреса</title>
+  <meta property="og:title" content="AppFactory — сайт под ключ">
+  <meta property="og:description" content="От идеи до работающего адреса в интернете. Лендинги, визитки и веб-приложения.">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo" href="#">App<span>Factory</span></a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#how">Как это работает</a>
+        <a href="#what">Что делаем</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Сайт под ключ —<br>от идеи до работающего адреса</h1>
+        <p class="hero-sub">Расскажите, что нужно, покажите примеры, которые нравятся, — и получите готовый сайт или веб-приложение, опубликованные в интернете. Без долгих созвонов и смет на три страницы.</p>
+        <a class="btn btn-primary" href="#contact">Обсудить проект</a>
+        <p class="hero-note">Эта страница сделана нашей же фабрикой — за один проход пайплайна.</p>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="container">
+        <h2>Как это работает</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>Бриф</h3>
+            <p>Вы описываете задачу своими словами и кидаете ссылки-референсы. Мы превращаем это в чёткое задание.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>Генерация</h3>
+            <p>Собираем сайт на чистом HTML/CSS/JS: быстрый, лёгкий, без лишних технологий — открывается мгновенно.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>Проверка</h3>
+            <p>Прогоняем по чек-листу: телефон и десктоп, скорость, поисковая оптимизация, доступность.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">4</span>
+            <h3>Публикация</h3>
+            <p>Деплоим на хостинг и отдаём вам работающую ссылку. Свой домен — подключим.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="what" id="what">
+      <div class="container">
+        <h2>Что делаем</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Лендинги</h3>
+            <p>Продуктовые страницы с одним сильным оффером: запуск услуги, событие, сбор заявок.</p>
+          </article>
+          <article class="card">
+            <h3>Сайты-визитки</h3>
+            <p>Страница эксперта, студии или небольшого бизнеса: кто вы, что умеете, как связаться.</p>
+          </article>
+          <article class="card">
+            <h3>Веб-приложения</h3>
+            <p>Калькуляторы, трекеры, мини-инструменты. Работают прямо в браузере, данные не теряются.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container">
+        <h2>Почему фабрика</h2>
+        <ul class="why-list">
+          <li><strong>Скорость.</strong> Типовой проект — от брифа до ссылки за день, а не за месяц.</li>
+          <li><strong>Лёгкость.</strong> Никаких тяжёлых платформ: страницы весят меньше мегабайта и летают на любом телефоне.</li>
+          <li><strong>Прозрачность.</strong> Вы видите каждый этап: бриф, черновик, проверка, публикация.</li>
+          <li><strong>Своё — значит своё.</strong> Код и контент полностью ваши, без подписок и привязки к конструктору.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-block" id="contact">
+      <div class="container">
+        <h2>Расскажите про вашу задачу</h2>
+        <p>Опишите идею в паре абзацев — вернёмся с предложением и сроком.</p>
+        <a class="btn btn-primary" href="mailto:yasnypon@gmail.com?subject=Заявка с сайта AppFactory">Написать на почту</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> AppFactory. Сделано фабрикой для самой себя.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
