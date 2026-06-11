@@ -3,111 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AppFactory — сайт или веб-приложение под ключ: от описания до работающего адреса в интернете. Быстро, без лишних встреч и переплат.">
-  <title>AppFactory — сайт под ключ от идеи до работающего адреса</title>
-  <meta property="og:title" content="AppFactory — сайт под ключ">
-  <meta property="og:description" content="От идеи до работающего адреса в интернете. Лендинги, визитки и веб-приложения.">
+  <meta name="description" content="AppFactory — сайт или веб-приложение под ключ: от описания до работающего адреса в интернете за считанные дни. Лендинги, визитки, веб-инструменты.">
+  <title>AppFactory — сайты и веб-приложения под ключ</title>
+  <meta property="og:title" content="AppFactory — сайты и веб-приложения под ключ">
+  <meta property="og:description" content="От идеи до работающего адреса в интернете за считанные дни.">
   <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav-row">
-      <a class="logo" href="#">App<span>Factory</span></a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="#how">Как это работает</a>
-        <a href="#what">Что делаем</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-    </div>
-  </header>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="glow glow-1" aria-hidden="true"></div>
+<div class="glow glow-2" aria-hidden="true"></div>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Сайт под ключ —<br>от идеи до работающего адреса</h1>
-        <p class="hero-sub">Расскажите, что нужно, покажите примеры, которые нравятся, — и получите готовый сайт или веб-приложение, опубликованные в интернете. Без долгих созвонов и смет на три страницы.</p>
-        <a class="btn btn-primary" href="#contact">Обсудить проект</a>
-        <p class="hero-note">Эта страница сделана нашей же фабрикой — за один проход пайплайна.</p>
-      </div>
-    </section>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="#top">App<span>Factory</span></a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#how">Процесс</a>
+      <a href="#what">Продукты</a>
+      <a href="#why">Подход</a>
+    </nav>
+    <a class="btn btn-small" href="#contact">Оставить заявку</a>
+  </div>
+</header>
 
-    <section class="how" id="how">
-      <div class="container">
-        <h2>Как это работает</h2>
-        <ol class="steps">
-          <li class="step">
-            <span class="step-num">1</span>
-            <h3>Бриф</h3>
-            <p>Вы описываете задачу своими словами и кидаете ссылки-референсы. Мы превращаем это в чёткое задание.</p>
-          </li>
-          <li class="step">
-            <span class="step-num">2</span>
-            <h3>Генерация</h3>
-            <p>Собираем сайт на чистом HTML/CSS/JS: быстрый, лёгкий, без лишних технологий — открывается мгновенно.</p>
-          </li>
-          <li class="step">
-            <span class="step-num">3</span>
-            <h3>Проверка</h3>
-            <p>Прогоняем по чек-листу: телефон и десктоп, скорость, поисковая оптимизация, доступность.</p>
-          </li>
-          <li class="step">
-            <span class="step-num">4</span>
-            <h3>Публикация</h3>
-            <p>Деплоим на хостинг и отдаём вам работающую ссылку. Свой домен — подключим.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
+<main id="top">
 
-    <section class="what" id="what">
-      <div class="container">
-        <h2>Что делаем</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Лендинги</h3>
-            <p>Продуктовые страницы с одним сильным оффером: запуск услуги, событие, сбор заявок.</p>
-          </article>
-          <article class="card">
-            <h3>Сайты-визитки</h3>
-            <p>Страница эксперта, студии или небольшого бизнеса: кто вы, что умеете, как связаться.</p>
-          </article>
-          <article class="card">
-            <h3>Веб-приложения</h3>
-            <p>Калькуляторы, трекеры, мини-инструменты. Работают прямо в браузере, данные не теряются.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="why">
-      <div class="container">
-        <h2>Почему фабрика</h2>
-        <ul class="why-list">
-          <li><strong>Скорость.</strong> Типовой проект — от брифа до ссылки за день, а не за месяц.</li>
-          <li><strong>Лёгкость.</strong> Никаких тяжёлых платформ: страницы весят меньше мегабайта и летают на любом телефоне.</li>
-          <li><strong>Прозрачность.</strong> Вы видите каждый этап: бриф, черновик, проверка, публикация.</li>
-          <li><strong>Своё — значит своё.</strong> Код и контент полностью ваши, без подписок и привязки к конструктору.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cta-block" id="contact">
-      <div class="container">
-        <h2>Расскажите про вашу задачу</h2>
-        <p>Опишите идею в паре абзацев — вернёмся с предложением и сроком.</p>
-        <a class="btn btn-primary" href="mailto:yasnypon@gmail.com?subject=Заявка с сайта AppFactory">Написать на почту</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+  <!-- HERO -->
+  <section class="hero">
     <div class="container">
-      <p>© <span id="year"></span> AppFactory. Сделано фабрикой для самой себя.</p>
+      <p class="badge reveal"><span class="dot"></span>Принимаем проекты на июнь</p>
+      <h1 class="reveal">Сайты и веб-приложения<br><em>под ключ</em></h1>
+      <p class="hero-sub reveal">Вы описываете задачу и показываете примеры, которые нравятся.
+      Мы возвращаем работающий продукт с адресом в интернете — за дни, не месяцы.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#contact">Обсудить проект</a>
+        <a class="btn btn-ghost" href="#how">Как мы работаем</a>
+      </div>
+      <dl class="stats reveal">
+        <div><dt>3–5 дней</dt><dd>от брифа до запуска</dd></div>
+        <div><dt>&lt; 1 сек</dt><dd>загрузка страниц</dd></div>
+        <div><dt>100%</dt><dd>код остаётся вам</dd></div>
+      </dl>
     </div>
-  </footer>
+  </section>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- ПРОЦЕСС -->
+  <section class="how" id="how">
+    <div class="container">
+      <p class="eyebrow">Процесс</p>
+      <h2>Четыре шага до запуска</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">01</span>
+          <h3>Бриф</h3>
+          <p>Описываете задачу своими словами, прикладываете референсы. Мы формулируем точное задание и согласуем с вами.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">02</span>
+          <h3>Сборка</h3>
+          <p>Дизайн и код одновременно. Лёгкие технологии без тяжёлых платформ — страницы открываются мгновенно.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">03</span>
+          <h3>Контроль качества</h3>
+          <p>Чек-лист из 25 пунктов: телефоны и десктопы, скорость, поисковая видимость, доступность.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">04</span>
+          <h3>Запуск</h3>
+          <p>Публикуем, подключаем ваш домен, передаём ссылку и весь исходный код. Продукт полностью ваш.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ПРОДУКТЫ -->
+  <section class="what" id="what">
+    <div class="container">
+      <p class="eyebrow">Продукты</p>
+      <h2>Что мы делаем</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 13h6"/></svg>
+          </div>
+          <h3>Лендинги</h3>
+          <p>Продуктовые страницы с одним сильным оффером: запуск услуги, событие, сбор заявок. Конверсия — главная метрика.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <h3>Сайты-визитки</h3>
+          <p>Страница эксперта, студии или небольшого бизнеса: кто вы, что умеете, почему вам доверяют и как с вами связаться.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>
+          </div>
+          <h3>Веб-приложения</h3>
+          <p>Калькуляторы, трекеры, личные кабинеты, мини-инструменты. Работают в браузере на любом устройстве.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДХОД -->
+  <section class="why" id="why">
+    <div class="container why-grid">
+      <div class="why-text">
+        <p class="eyebrow">Подход</p>
+        <h2>Почему это работает быстро — и не в ущерб качеству</h2>
+        <p class="why-lead">Мы собираем продукты на отлаженном конвейере: проверенные шаблоны архитектуры,
+        жёсткий чек-лист качества и никакого «изобретения велосипеда» на каждом проекте.
+        Вся скорость — из процесса, не из срезанных углов.</p>
+      </div>
+      <ul class="why-list">
+        <li class="reveal"><strong>Прозрачность.</strong> Вы видите каждый этап: бриф, черновик, проверка, публикация. Никаких чёрных ящиков.</li>
+        <li class="reveal"><strong>Лёгкость.</strong> Страницы весят меньше мегабайта и летают даже на слабом телефоне с плохим интернетом.</li>
+        <li class="reveal"><strong>Без аренды.</strong> Никаких конструкторов с подпиской: код и контент полностью ваши, навсегда.</li>
+        <li class="reveal"><strong>Поддержка.</strong> Правки после запуска — в течение дня, а не «в порядке очереди через две недели».</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ФОРМА -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <div class="contact-info">
+          <p class="eyebrow">Заявка</p>
+          <h2>Расскажите про вашу задачу</h2>
+          <p>Пары абзацев достаточно. Вернёмся с предложением и сроком в течение рабочего дня.</p>
+        </div>
+        <form id="lead-form" novalidate>
+          <div class="field">
+            <label for="f-name">Как вас зовут</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Почта для ответа</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-msg">Что нужно сделать</label>
+            <textarea id="f-msg" name="message" rows="4" required placeholder="Например: лендинг для студии йоги, нравится minimal-стиль, нужен к концу месяца"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <p>© <span id="year"></span> AppFactory</p>
+    <p class="footer-note">Эта страница собрана нашей же фабрикой</p>
+  </div>
+</footer>
+
 </body>
 </html>
