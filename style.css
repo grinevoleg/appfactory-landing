@@ -259,7 +259,6 @@ h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 0.45rem; }
 }
 .vision-frame img {
   display: block; width: 100%; height: auto;
-  will-change: transform, opacity, filter;
 }
 .vision-frame figcaption {
   position: absolute; left: 22px; bottom: 16px;
