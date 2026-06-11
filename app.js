@@ -61,6 +61,32 @@ if (window.gsap) {
         });
       });
 
+      /* --- Визии: появилась → встала на место → улетела и растворилась --- */
+      gsap.utils.toArray('.vision-frame').forEach((frame) => {
+        const img = frame.querySelector('img');
+        const cap = frame.querySelector('figcaption');
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: frame,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1, // догоняет скролл за секунду — движение тягучее
+          },
+        })
+          // въезд: снизу, крупнее, размыта
+          .fromTo(img,
+            { yPercent: 18, scale: 1.18, autoAlpha: 0, filter: 'blur(14px)' },
+            { yPercent: 0, scale: 1, autoAlpha: 1, filter: 'blur(0px)', duration: 0.4, ease: 'none' })
+          .fromTo(cap, { autoAlpha: 0, x: -24 }, { autoAlpha: 1, x: 0, duration: 0.15, ease: 'none' }, 0.25)
+          // пауза «на месте»
+          .to(img, { yPercent: -2, duration: 0.2, ease: 'none' })
+          // улёт: вверх, сжимается и растворяется
+          .to(cap, { autoAlpha: 0, duration: 0.1, ease: 'none' }, 0.62)
+          .to(img,
+            { yPercent: -22, scale: 0.9, autoAlpha: 0, filter: 'blur(10px)', duration: 0.4, ease: 'none' });
+      });
+
       /* --- Номера шагов: лёгкий «выстрел» --- */
       gsap.utils.toArray('.step-num').forEach((el) => {
         gsap.from(el, {

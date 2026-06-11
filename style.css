@@ -248,6 +248,30 @@ h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 0.45rem; }
 .form-status.ok { color: #4ade80; }
 .form-status.err { color: #f87171; }
 
+/* ====== Визии (параллакс-картины) ====== */
+.vision { padding: 10vh 0; overflow: hidden; }
+.vision-frame {
+  position: relative; margin: 0 auto;
+  width: min(1240px, 92vw);
+  border-radius: 26px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+}
+.vision-frame img {
+  display: block; width: 100%; height: auto;
+  will-change: transform, opacity, filter;
+}
+.vision-frame figcaption {
+  position: absolute; left: 22px; bottom: 16px;
+  font-size: 0.78rem; letter-spacing: 0.12em;
+  color: var(--muted); text-transform: lowercase;
+}
+
+@media (max-width: 767px) {
+  .vision { padding: 6vh 0; }
+  .vision-frame { border-radius: 16px; }
+}
+
 /* ====== Подвал ====== */
 .site-footer { border-top: 1px solid var(--border); padding: 26px 0; }
 .footer-row {
